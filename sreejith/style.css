@@ -1,0 +1,13 @@
+.row {
+    border: 1px outset red;
+    text-align: left;
+    width:fit-content;
+    display: none;
+  }
+
+.column {
+    display: inline-block; 
+    width: 200px;
+    border-right: 1px outset red;
+
+}
