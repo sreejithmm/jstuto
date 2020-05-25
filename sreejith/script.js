@@ -42,33 +42,46 @@ function exercise1(jsonobj) {
 
 }
 function exercise2(jsonobj){
-  var row1  = document.getElementById("row1");
-  var row2  = document.getElementById("row2");
-
-  var id2  = document.getElementById("column1");
-  var id3  = document.getElementById("column2");
-  var id4  = document.getElementById("column3");
-  var id5  = document.getElementById("column4");
-  var id6  = document.getElementById("column5");
-  var id7  = document.getElementById("column6");
-  var id8  = document.getElementById("column7");
-  var id9  = document.getElementById("column8");
-
-  var i;
-
-  row1.style.display = "block"; 
+  let length = Object.keys(jsonobj).length;
+  let i;
 
 
-  id2.innerHTML = Object.keys(jsonobj)[0];
-  id3.innerHTML = Object.keys(jsonobj)[1];
-  id4.innerHTML = Object.keys(jsonobj)[2];
-  id5.innerHTML = Object.keys(jsonobj)[3];
+  let myobj = document.getElementById('row1');
+  if( myobj) {
+    myobj.remove();
+  }
+  let myobj2 = document.getElementById('row2');
+  if( myobj2) {
+     myobj2.remove();
+  }
 
-  id6.innerHTML = Object.values(jsonobj)[0];
-  id7.innerHTML = Object.values(jsonobj)[1];
-  id8.innerHTML = Object.values(jsonobj)[2];
-  id9.innerHTML = Object.values(jsonobj)[3];
-  row2.style.display = "block"; 
+
+  let div1 = document.createElement('div');
+  div1.id = 'row1';
+  div1.className = 'row';
+  document.getElementsByTagName('body')[0].appendChild(div1);
+  
+  let div2 = document.createElement('div');
+  div2.id = 'row2';
+  div2.className = 'row';
+  document.getElementsByTagName('body')[0].appendChild(div2);
+
+  for (i =0 ; i< length;i++){
+    let span = document.createElement('span');
+    span.id = 'column' + i;
+    span.className = 'column'
+    span.innerHTML = Object.keys(jsonobj)[i];
+    div1.appendChild(span);
+  }
+
+  for (i =0 ; i< length;i++){
+    let span = document.createElement('span');
+    span.id = 'column' + i;
+    span.className = 'column'
+    span.innerHTML = Object.values(jsonobj)[i];
+    div2.appendChild(span);
+  }
+  console.log("finished");
 
 
 }

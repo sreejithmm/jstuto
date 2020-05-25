@@ -2,7 +2,7 @@
     border: 1px outset red;
     text-align: left;
     width:fit-content;
-    display: none;
+    display: block;
   }
 
 .column {
