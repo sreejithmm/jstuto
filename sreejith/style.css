@@ -1,13 +1,16 @@
 .row {
     border: 1px outset red;
     text-align: left;
-    width:fit-content;
     display: block;
+    width:817px;
+
   }
 
 .column {
     display: inline-block; 
     width: 200px;
-    border-right: 1px outset red;
-
+    border-right: 1px dotted red;
+    border-top: 1px outset blue
+    
 }
+

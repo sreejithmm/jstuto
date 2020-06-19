@@ -86,12 +86,34 @@ function exercise2(jsonobj){
 
 }
 
+function exercise2_mode(jsonobj){
+  let lis = [jsonobj];
+  lis.forEach(function (item) {
+    console.log("item----");
+    console.log(item);
+    let maindiv = document.getElementById('maindiv');
+    let length = Object.keys(jsonobj).length;
+    let string =''
+
+    for (i =0 ; i< length;i++){
+     string = `${string} <span class='column'> ${Object.keys(jsonobj)[i]} </span> `;
+    }
+    
+    for (i =0 ; i< length;i++) {
+      string = `${string} <span class='column'> ${Object.values(jsonobj)[i]} </span> `;
+    }
+    maindiv.innerHTML = string;
+})
+}
+
 function reqParser() {
   var jsonobj = JSON.parse(this.responseText);
 
   /*exercise1(jsonobj); */
 
-  exercise2(jsonobj);
+ /* exercise2(jsonobj); */
+
+  exercise2_mode(jsonobj);
 
 }
   
